@@ -1,0 +1,68 @@
+<idea-plugin>
+    <id>com.ddlab.tornado.codepublisher</id>
+    <name>DDLAB CodePublisher</name>
+    <version>1.3.0</version>
+    <vendor email="deba.java@gmail.com" url="https://about.me/debadattamishra">DDLAB INC</vendor>
+
+    <description>
+        <![CDATA[
+          <b>CodePublisher</b> is a free and open source IntelliJ IDEA plugin which helps developer/s to 
+          publish or share the complete Codebase or code snippet directly to <b>GitHub</b>, <b>GitLab</b> or <b>Bitbucket</b>.
+          This plugin does not provide any git functionality, it only provides an easy way to keep the code in <b>GitHub</b>, <b>GitLab</b> or <b>Bitbucket</b> 
+          for future references. 
+          Many times, developers write good code for some POC and code goes into lost world after some time. 
+          This plugin will help you to save and share your code in GitHub, GitLab or Bitbucket.
+          
+          <p></p>
+          <p><b><u>Advantages of Code Publisher</b></u></p>
+          <ul>
+            <li>An convenient way to publish codebase in <b>GitHub</b>, <b>GitLab</b> or <b>Bitbucket</b> for future reference.</li>
+            <li>Easy to create a code snippet and share with your friends.</li>
+            <li>A non blocking way to share the source code or code snippet.</li>
+            <li>Easy to work as it has been developed using pure java and it is free and open source.</li>
+            <li>Does not provide GIT functionality but it uses some git functionality internally.</li>
+          </ul>
+          
+          <p><b><u>How to use</b></u></p>
+          <ul>
+          	<li>Make right click on a project and select menu item <code>Publish project to GitHub, GitLab, Bitbucket</code></li>
+          	<li>Make right click on a file and select menu item <code>Share code in GitHub, GitLab, Bitbucket</code></li>
+          </ul>
+          
+          <p>License</p>
+          <p>&nbsp;&copy;&nbsp;Copyright 2018 Debadatta Mishra(PIKU)</p>
+          <p>Free and Open Source licensed under the Apache License, Version 2.0.</p>
+          <br>
+        ]]>
+    </description>
+    
+    <change-notes>
+        <![CDATA[
+            <p>1.3.0</p>
+            <li>Initial version added for IntelliJ IDEA 2020.1.* </li>
+            <li>Added support for other products like Pycharm, Webstorm etc</li>
+        ]]>
+    </change-notes>
+
+    <idea-version since-build="173.0"/>
+
+    <!-- Added support for all types of products like pycharm, rubymine -->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+
+    <actions>
+        <action id="codePubId" class="com.ddlab.tornado.actions.CodePublishAction">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+        </action>
+
+        <action id="snippetId" class="com.ddlab.tornado.actions.SnippetCreateAction">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+
+    </actions>
+
+</idea-plugin>

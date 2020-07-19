@@ -1,0 +1,8 @@
+rootProject.name = 'ddlab-codepublisher-idea-2020'
+include 'ddlab.generator'
+include 'ddlab.codepublisher.core'
+
+println '********************************************************'
+println 'Recommended command to use  "gradlew clean build latest"'
+println '********************************************************'
+
